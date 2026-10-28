@@ -1,0 +1,8 @@
+.godot/
+build/
+*.tmp
+.DS_Store
+Thumbs.db
+
+tools/creature_generator/bin/
+tools/creature_generator/obj/
