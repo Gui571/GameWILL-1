@@ -98,5 +98,3 @@ Nessa versão, o mouse escolhe alvos e ações; 1–5 ativam técnicas, Tab/seta
 - [Procedural Pixel Creatures](https://github.com/idlerunner00/procedural-pixel-creatures), de idlerunner00, sob licença MIT: gerador real das sprites e animações incluídas.
 - [Cartoon Terrain Studio](https://github.com/idlerunner00/cartoon-terrain-studio), de idlerunner00, sob licença MIT: referência visual e arquitetural para os terraços, rios e contornos. O terreno desta introdução foi implementado em GDScript; não incorpora o editor completo.
 - Godot Engine 4.6.3, licença MIT; fontes DejaVu. As distribuições incluem os avisos do motor, suas bibliotecas, das fontes e dos projetos de referência em `LICENSES/`.
-
-A apresentação é uma fantasia original inspirada em RPGs modernos, sem vínculo oficial com Seven Knights, Honkai: Star Rail ou seus criadores. William é uma adaptação procedural de sua referência visual, não uma extração pixel a pixel da imagem enviada.
