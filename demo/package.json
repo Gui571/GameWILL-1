@@ -1,0 +1,13 @@
+{
+  "name": "william-aurora-demo",
+  "version": "0.3.0",
+  "private": true,
+  "scripts": {
+    "test": "node --test tests/combat.test.mjs",
+    "test:ui": "node tests/ui.cjs"
+  },
+  "devDependencies": {
+    "playwright": "1.62.1"
+  },
+  "type": "module"
+}

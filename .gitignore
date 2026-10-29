@@ -19,3 +19,8 @@ unity/Tests/bin/
 unity/Tests/obj/
 unity/*.csproj
 unity/*.sln
+
+demo/tests/fixture/bin/
+demo/tests/fixture/obj/
+
+demo/node_modules/

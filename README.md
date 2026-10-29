@@ -1,14 +1,22 @@
 # William: Limiar de Aurora
 
-Uma introdução interativa de fantasia em português: William chega a um vale de ilhas, ruínas e cristais, desperta um farol e encontra o guardião de um portal. O cenário combina vegetação e terraços procedurais com vestígios de tecnologia mágica. As criaturas animadas são geradas com o framework **Procedural Pixel Creatures**, de idlerunner00.
+Um RPG de fantasia em português sobre William e a busca por seu irmão além dos trilhos. A nova introdução apresenta uma equipe de três integrantes, combate semiautomático, poderes elementais e um guardião na passagem para Aurora.
 
-Esta versão **0.2** concentra-se na abertura e em um confronto de apresentação. O ataque básico pode ser automático; o jogador decide quando usar **Chama**, **Geada** e **Égide**. Não é uma campanha completa nem um mundo infinito.
+O projeto principal está sendo desenvolvido em **Unity**. Uma prévia complementar de navegador está disponível para jogar imediatamente; a versão Godot 0.2 permanece preservada abaixo.
 
-## Nova implementação Unity
+## Nova demo jogável — O juramento de Aurora
 
-A versão Unity está em [unity/](unity/README.md), com combate próprio, três integrantes e três encontros. As regras passaram em 46 verificações .NET; execução visual e builds Unity ainda aguardam validação no editor. A arte Mana Seed ainda não foi incorporada. **O download abaixo continua sendo a versão Godot 0.2.**
+**[Baixar demo para navegador (HTML, aproximadamente 1,7 MB)](https://github.com/Gui571/GameWILL-1/raw/refs/heads/main/downloads/William-Aurora-Demo.html)** · **[ZIP com instruções e licenças](https://github.com/Gui571/GameWILL-1/raw/refs/heads/main/downloads/William-Aurora-Demo.zip)**
 
-## Jogar
+Baixe e abra o HTML no Chrome, Edge ou Firefox. Funciona offline, sem instalar um motor de jogo. Prólogo, três encontros, aliados com cura e ataque automáticos, alvos anunciados, combos elementais, chefe com segunda fase, melhorias e salvamento entre encontros. Interface responsiva, som e opção de movimento reduzido.
+
+A prévia de navegador é complementar e **não é um build Unity**. O projeto [Unity](unity/README.md) recebeu a nova apresentação e o mesmo núcleo de combate, validado em 168 verificações .NET. A tradução web é comparada a 218 estados C#; 11 testes e um fluxo completo Chromium verificam a prévia. Execução e builds Unity continuam pendentes de editor/licença. Mana Seed ainda não está incorporado; a arte de personagens é temporária e licenciada.
+
+![Prévia real de combate no navegador](docs/demo/combate.png)
+
+[Código e instruções da demo](demo/README.md) · [Instruções Unity](unity/README.md)
+
+## Versão anterior — Godot 0.2
 
 **[Baixar o jogo para Windows (ZIP, 36 MB)](https://github.com/Gui571/GameWILL-1/raw/refs/heads/main/downloads/William-Limiar-de-Aurora-Windows-x64.zip)**
 

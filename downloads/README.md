@@ -1,9 +1,19 @@
-# Download para Windows
+# Baixar e jogar
 
-[Baixar William — Limiar de Aurora (Windows 64 bits)](https://github.com/Gui571/GameWILL-1/raw/refs/heads/main/downloads/William-Limiar-de-Aurora-Windows-x64.zip)
+## Nova demo — navegador, offline
 
-Extraia o ZIP e abra `William-Limiar-de-Aurora.exe`. Não precisa instalar Godot ou .NET. O pacote inclui os recursos e avisos de licença.
+**[Baixar William-Aurora-Demo.html](https://github.com/Gui571/GameWILL-1/raw/refs/heads/main/downloads/William-Aurora-Demo.html)** · **[Baixar ZIP com instruções](https://github.com/Gui571/GameWILL-1/raw/refs/heads/main/downloads/William-Aurora-Demo.zip)**
 
-Versão 0.2: introdução com terreno procedural, criaturas animadas e um confronto semiautomático. Exportada no Linux; execução nativa em Windows ainda não validada. O checksum do pacote está em `SHA256SUMS.txt`.
+Salve o HTML no computador e abra com dois cliques no Chrome, Edge ou Firefox. Não precisa instalar Unity, Godot, .NET ou iniciar um servidor. Se baixar o ZIP, extraia primeiro e abra `William-Aurora-Demo.html`.
 
-O código-fonte fica na raiz do repositório. Para gerar novas distribuições Windows e Linux, consulte `scripts/build_intro.sh`.
+Esta prévia tem três encontros, aliados automáticos, poderes ativos, melhorias e encerramento. Inclui todas as imagens, fontes, áudio sintetizado e avisos de licença. O progresso entre encontros fica salvo no navegador, quando o armazenamento local está disponível.
+
+**É uma prévia complementar HTML; não é um executável ou exportação Unity.** O núcleo C# e o projeto Unity também foram atualizados, mas o editor/licença necessários para validar e gerar o build Unity não estão disponíveis neste ambiente.
+
+## Versão anterior — Windows
+
+[Baixar William — Limiar de Aurora 0.2 (Windows 64 bits)](https://github.com/Gui571/GameWILL-1/raw/refs/heads/main/downloads/William-Limiar-de-Aurora-Windows-x64.zip)
+
+Este ZIP continua sendo a versão Godot anterior, com terreno procedural e um confronto semiautomático. Extraia e abra `William-Limiar-de-Aurora.exe`. Exportada no Linux; execução nativa em Windows ainda não validada. Não inclui as mudanças da nova demo de combate.
+
+Os checksums dos downloads estão em `SHA256SUMS.txt`. Projeto Unity e instruções: [../unity/README.md](../unity/README.md). Código e testes da prévia HTML: [../demo/README.md](../demo/README.md).
