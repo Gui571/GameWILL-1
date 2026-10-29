@@ -30,7 +30,7 @@ public sealed class Introduction : MonoBehaviour {
     bool paused, isMuted, lowMotion;
     GUIStyle text, heading, title, small, tiny, centered;
     Font font;
-    Texture2D disc, glow;
+    Texture2D disc, glow, characterAtlas, forestArt;
     AudioSource source, music;
     AudioClip ambient;
 
@@ -55,6 +55,8 @@ public sealed class Introduction : MonoBehaviour {
             foreach (var clip in a.sheet.clips) a.clips[clip.name] = clip;
             art[name] = a;
         }
+        characterAtlas = Resources.Load<Texture2D>("Art/Aurora/Characters");
+        forestArt = Resources.Load<Texture2D>("Art/Aurora/Forest");
         disc = Disc(false); glow = Disc(true);
         source = gameObject.AddComponent<AudioSource>(); music = gameObject.AddComponent<AudioSource>();
         foreach (string kind in new[] {"hit", "flame", "frost", "aegis", "heal", "charge", "win", "click"}) sounds[kind] = Sound(kind);
@@ -185,6 +187,23 @@ public sealed class Introduction : MonoBehaviour {
     }
     void Bar(float x, float y, float w, float current, float max, Color color, float height = 5) { Box(x, y, w, height, Hex(0x06121c)); Box(x, y, w * Mathf.Clamp01(current / max), height, color); }
     void Actor(string name, Vector2 ground, float scale, bool flip = false, bool action = false, float alpha = 1) {
+        if (characterAtlas != null) {
+            Rect crop; Vector2 pivot;
+            switch(name) {
+                case "william": crop=new Rect(0,0,418,610); pivot=new Vector2(220,578); break;
+                case "moth": crop=new Rect(418,0,430,610); pivot=new Vector2(230,578); break;
+                case "fox": crop=new Rect(848,0,406,610); pivot=new Vector2(230,578); break;
+                case "guardian": crop=new Rect(0,610,418,600); pivot=new Vector2(220,550); break;
+                case "boss": crop=new Rect(418,610,452,600); pivot=new Vector2(225,550); break;
+                default: crop=new Rect(870,610,384,600); pivot=new Vector2(190,550); break;
+            }
+            float f=scale*(name=="fox"?72:92)/crop.height;
+            float bob=lowMotion?0:Mathf.Sin(clock*2.3f)*1.2f;
+            var original=GUI.matrix; if(flip)GUI.matrix=GUI.matrix*Matrix4x4.TRS(new Vector3(ground.x*2,0,0),Quaternion.identity,new Vector3(-1,1,1));
+            var oldColor=GUI.color; GUI.color=new Color(1,1,1,alpha);
+            GUI.DrawTextureWithTexCoords(new Rect(ground.x-pivot.x*f,ground.y-pivot.y*f+bob,crop.width*f,crop.height*f),characterAtlas,new Rect(crop.x/characterAtlas.width,1-(crop.y+crop.height)/characterAtlas.height,crop.width/characterAtlas.width,crop.height/characterAtlas.height),true);
+            GUI.color=oldColor;GUI.matrix=original;return;
+        }
         if (!art.TryGetValue(name, out var a)) return;
         string clipName = (action ? "action" : "idle") + (flip ? "_W" : "_E");
         if (!a.clips.TryGetValue(clipName, out var clip)) clip = a.sheet.clips[0];
@@ -207,6 +226,12 @@ public sealed class Introduction : MonoBehaviour {
         }
     }
     void World() {
+        if(forestArt != null) {
+            GUI.DrawTexture(new Rect(0,0,1280,720),forestArt,ScaleMode.ScaleAndCrop);
+            Box(0,0,1280,720,new Color(.01f,.05f,.09f,.14f));
+            for(int i=0;i<(lowMotion?5:25);i++){float x=i*89%1280+Mathf.Sin(clock*.3f+i)*12,y=180+i*53%390+Mathf.Cos(clock*.5f+i)*6;Oval(new Vector2(x,y),12,12,new Color(.8f,.9f,.5f,.18f),true);}
+            return;
+        }
         for (int i = 0; i < 18; i++) Box(0, i * 40, 1280, 41, Color.Lerp(Hex(0x061422), Hex(0x365249), i / 17f));
         Oval(new Vector2(990, 130), 460, 460, new Color(.37f, .82f, .77f, .35f), true);
         for (int i = 0; i < 11; i++) Tree(i * 135 - 30, 300 + i % 3 * 18, .95f, i, Hex(0x18373c));
@@ -274,7 +299,7 @@ public sealed class Introduction : MonoBehaviour {
         Label("PRÓLOGO  /  UMA JORNADA EM TRÊS ENCONTROS", 73, 675, 750, 28, tiny);
     }
     void DrawStory() {
-        Actor("william", new Vector2(400, 445), 2.7f); Actor("moth", new Vector2(625, 345), 2.5f); Actor("fox", new Vector2(770, 465), 2.2f);
+        Actor("william", new Vector2(400, 445), 2.7f); Actor("moth", new Vector2(625, 445), 2.5f); Actor("fox", new Vector2(770, 465), 2.2f);
         Panel(55, 492, 1170, 190, true); Label(voices[line], 83, 510, 1030, 35, small);
         Label(story[line].Substring(0, Mathf.Min(story[line].Length, (int)typed)), 83, 549, 1080, 82);
         Label((line + 1) + " / 3  ·  ESPAÇO PARA CONTINUAR", 83, 645, 700, 25, tiny);
@@ -306,7 +331,7 @@ public sealed class Introduction : MonoBehaviour {
             if (battle.Target == u) Ring(p, u.IsBoss ? 70 : 52, gold, .28f);
             if (u.Windup > 0) Ring(p, 70 + u.Windup * 23, new Color(1, .38f, .23f, .75f), .4f);
             if (u.Shield > 0) Ring(p + new Vector2(0, -60), 67, new Color(.6f, .9f, .96f, .42f));
-            Actor(u.Art, p + lunge, u.IsBoss ? 2.9f : u.Side == Side.Heroes ? 2.3f : 2.2f, u.Side == Side.Enemies, active || u.Windup > 0);
+            Actor(u.IsBoss ? "boss" : u.Art, p + lunge, u.IsBoss ? 2.9f : u.Side == Side.Heroes ? 2.3f : 2.2f, u.Side == Side.Enemies, active || u.Windup > 0);
             if (u.Side == Side.Enemies) {
                 Label(u.Name, p.x - 100, p.y + 12, 210, 28, small); Bar(p.x - 75, p.y + 43, 150, u.Hp, u.MaxHp, u.Enraged ? Hex(0xf3a077) : gold);
                 if (battle.Target == u) Label("ALVO", p.x - 35, p.y - (u.IsBoss ? 235 : 195), 100, 25, tiny);
@@ -395,7 +420,7 @@ public sealed class Introduction : MonoBehaviour {
         Box(0, 0, 1280, 720, new Color(0, .02f, .04f, .8f)); Panel(235, 105, 810, 510, true);
         Label(help == "credits" ? "FEITO PARA WILLIAM" : "CARREGUE A LUZ", 270, 140, 740, 55, heading);
         string value = help == "credits"
-            ? "William e direção criativa: Gui571.\n\nSprites temporárias: Procedural Pixel Creatures, MIT; adaptações e créditos em Resources/Art. Fonte DejaVu e respectivos avisos incluídos. Cenário, apresentação e áudio originais deste projeto.\n\nDragon Crashers é referência de apresentação. Nenhum asset desse jogo ou da coleção Mana Seed foi incorporado."
+            ? "William e direção criativa: Gui571.\n\nArte revisada: imagens originais geradas com assistência de IA; poses com movimentos procedurais. Atlas antigos: Procedural Pixel Creatures, MIT. Créditos em Resources/Art. Fonte DejaVu e respectivos avisos incluídos. Cenário, apresentação e áudio originais deste projeto.\n\nDragon Crashers é referência de apresentação. Nenhum asset desse jogo ou da coleção Mana Seed foi incorporado."
             : "William ataca automaticamente. Toque em um inimigo para concentrar a equipe nele; TAB alterna o alvo.\n\nQ · CHAMA causa dano. Sobre um inimigo congelado, produz choque térmico.\nE · GEADA interrompe golpes anunciados e congela o alvo.\nR · ÉGIDE protege a equipe com um escudo temporário.\n\nESPAÇO executa um corte manual e recupera energia. T alterna Auto; ESC pausa. Os botões também respondem a cliques e toques.";
         Label(value, 270, 215, 740, 325); if (Button("Entendi", 735, 540, 270, 50, true)) help = "";
     }

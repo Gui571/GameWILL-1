@@ -11,3 +11,7 @@ As imagens desta pasta são capturas reais da prévia HTML, não renders Unity.
 - **Unity:** quatro arquivos C# analisados pelo parser Roslyn sem erros de sintaxe. A análise de sintaxe não valida referências da API Unity. Não houve importação, execução visual ou build no editor, ausente neste ambiente junto com licença configurada.
 
 Os combates ativos dos testes de regras duram aproximadamente 9–29 segundos cada; navegação, leitura e decisões estendem a introdução. O teste de derrota define vida zero para exercitar a interface; os testes de regras também verificam derrota causada pelo combate. As capturas de combate usam atributos normais da partida.
+
+## Revisão artística
+
+Substituídos personagens e cenário por imagens originais geradas para William. Atlas RGBA 1254×1254 com transparência conferida; fundo 1536×1024. Seis regiões de personagens usadas nos dois renderizadores sem alterar os arquivos originais. Novas poses com movimentos procedurais, sem spritesheet nova de ataques quadro a quadro. Recortes e escalas inspecionados em capturas reais. Fluxo Chromium completo repetido com sucesso em desktop e toque emulado; Égide, créditos e análise sintática C# também aprovados. As imagens desta pasta mostram a arte revisada.

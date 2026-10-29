@@ -19,7 +19,7 @@ Prólogo em português, mapa de três encontros, equipe de três integrantes, in
 - Clique/toque no inimigo para mudar o alvo. Todos os comandos também têm botões.
 - **Esc:** pausa/retoma. Ajuda inclui opção de movimento reduzido; áudio pode ser silenciado.
 
-As sprites são as já licenciadas do projeto, geradas com Procedural Pixel Creatures. Fundo, interface e áudio foram criados para esta demo. Mana Seed não foi comprado ou incorporado. Licenças também estão embutidas no HTML, em **Sobre esta demo**, no encerramento.
+A arte atual é original, gerada com assistência de IA para este projeto: William, Lyra em forma humana, Bruma como raposa branca, sentinela, guardião e criatura do bosque. O cenário também foi refeito. As poses têm movimentos procedurais, sem animações novas desenhadas quadro a quadro. Os atlas antigos de Procedural Pixel Creatures permanecem apenas como fallback no projeto Unity. Mana Seed não foi comprado ou incorporado. Licenças também estão embutidas no HTML, em **Sobre esta demo**, no encerramento.
 
 ## Código e validação
 

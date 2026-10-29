@@ -1,6 +1,6 @@
 # William — introdução em Unity
 
-Implementação Unity independente da versão Godot. O combate em C# tem três integrantes, alvo selecionável, ataques automáticos ou manuais, Chama, Geada com interrupção, Égide com escudo de equipe, cura automática, três encontros, melhorias entre encontros, derrota e encerramento. A apresentação usa temporariamente as sprites procedurais já licenciadas do projeto; Lyra usa a forma de uma mariposa luminosa e Bruma a de uma raposa.
+Implementação Unity independente da versão Godot. O combate em C# tem três integrantes, alvo selecionável, ataques automáticos ou manuais, Chama, Geada com interrupção, Égide com escudo de equipe, cura automática, três encontros, melhorias entre encontros, derrota e encerramento. A apresentação usa arte original gerada para este projeto: William, Lyra humana e Bruma como raposa branca, além dos inimigos. O atlas e o bosque ficam em `Resources/Art/Aurora`. As poses usam movimentos procedurais; os atlas antigos permanecem como fallback.
 
 **Estado:** regras compiladas e testadas em .NET 8. O editor Unity não está instalado neste ambiente; cenas, importação, áudio, apresentação, entrada por toque e builds ainda precisam de validação no Unity. Não existe um novo executável Unity nesta entrega. O ZIP Windows em `../downloads` continua sendo a versão Godot 0.2.
 

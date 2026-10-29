@@ -6,11 +6,11 @@ O projeto principal está sendo desenvolvido em **Unity**. Uma prévia complemen
 
 ## Nova demo jogável — O juramento de Aurora
 
-**[Baixar demo para navegador (HTML, aproximadamente 1,7 MB)](https://github.com/Gui571/GameWILL-1/raw/refs/heads/main/downloads/William-Aurora-Demo.html)** · **[ZIP com instruções e licenças](https://github.com/Gui571/GameWILL-1/raw/refs/heads/main/downloads/William-Aurora-Demo.zip)**
+**[Baixar demo para navegador (HTML, aproximadamente 8,5 MB)](https://github.com/Gui571/GameWILL-1/raw/refs/heads/main/downloads/William-Aurora-Demo.html)** · **[ZIP com instruções e licenças](https://github.com/Gui571/GameWILL-1/raw/refs/heads/main/downloads/William-Aurora-Demo.zip)**
 
 Baixe e abra o HTML no Chrome, Edge ou Firefox. Funciona offline, sem instalar um motor de jogo. Prólogo, três encontros, aliados com cura e ataque automáticos, alvos anunciados, combos elementais, chefe com segunda fase, melhorias e salvamento entre encontros. Interface responsiva, som e opção de movimento reduzido.
 
-A prévia de navegador é complementar e **não é um build Unity**. O projeto [Unity](unity/README.md) recebeu a nova apresentação e o mesmo núcleo de combate, validado em 168 verificações .NET. A tradução web é comparada a 218 estados C#; 11 testes e um fluxo completo Chromium verificam a prévia. Execução e builds Unity continuam pendentes de editor/licença. Mana Seed ainda não está incorporado; a arte de personagens é temporária e licenciada.
+A prévia de navegador é complementar e **não é um build Unity**. O projeto [Unity](unity/README.md) recebeu a nova apresentação e o mesmo núcleo de combate, validado em 168 verificações .NET. A tradução web é comparada a 218 estados C#; 11 testes e um fluxo completo Chromium verificam a prévia. Execução e builds Unity continuam pendentes de editor/licença. A arte foi refeita com imagens originais geradas para William: seis personagens e um bosque detalhado, com poses animadas por código. Mana Seed não está incorporado.
 
 ![Prévia real de combate no navegador](docs/demo/combate.png)
 

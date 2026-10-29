@@ -8,8 +8,8 @@ shutil.copyfile(root/'demo/index.html',html)
 with ZipFile(downloads/'William-Aurora-Demo.zip','w',ZIP_DEFLATED) as z:
  z.write(html,html.name)
  z.write(root/'demo/README.md','LEIA-ME.md')
- for file in (root/'unity/Assets/William/Resources/Art').iterdir():
-  if file.suffix in ('.txt','.md'):z.write(file,'LICENSES/'+file.name)
+ for file in (root/'unity/Assets/William/Resources/Art').rglob('*'):
+  if file.suffix in ('.txt','.md'):z.write(file,'LICENSES/'+str(file.relative_to(root/'unity/Assets/William/Resources/Art')))
 with ZipFile(downloads/'William-Aurora-Demo.zip') as z:
  assert z.testzip() is None
 checks=[]
