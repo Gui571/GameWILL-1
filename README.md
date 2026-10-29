@@ -4,6 +4,10 @@ Uma introdução interativa de fantasia em português: William chega a um vale d
 
 Esta versão **0.2** concentra-se na abertura e em um confronto de apresentação. O ataque básico pode ser automático; o jogador decide quando usar **Chama**, **Geada** e **Égide**. Não é uma campanha completa nem um mundo infinito.
 
+## Nova implementação Unity
+
+A versão Unity está em [unity/](unity/README.md), com combate próprio, três integrantes e três encontros. As regras passaram em 46 verificações .NET; execução visual e builds Unity ainda aguardam validação no editor. A arte Mana Seed ainda não foi incorporada. **O download abaixo continua sendo a versão Godot 0.2.**
+
 ## Jogar
 
 **[Baixar o jogo para Windows (ZIP, 36 MB)](https://github.com/Gui571/GameWILL-1/raw/refs/heads/main/downloads/William-Limiar-de-Aurora-Windows-x64.zip)**

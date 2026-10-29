@@ -6,3 +6,16 @@ Thumbs.db
 
 tools/creature_generator/bin/
 tools/creature_generator/obj/
+
+# Unity editor caches and generated builds
+unity/[Ll]ibrary/
+unity/[Tt]emp/
+unity/[Oo]bj/
+unity/[Ll]ogs/
+unity/[Uu]ser[Ss]ettings/
+unity/[Bb]uild/
+unity/[Bb]uilds/
+unity/Tests/bin/
+unity/Tests/obj/
+unity/*.csproj
+unity/*.sln
